@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cal AI - Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#930df2",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#0a0a0c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center justify-center">
+<div class="relative w-full max-w-[430px] h-[932px] bg-background-light dark:bg-background-dark overflow-hidden flex flex-col shadow-2xl border-x border-primary/10">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 pt-12 pb-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200/50 dark:bg-primary/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">menu</span>
+</button>
+<h1 class="text-lg font-semibold tracking-tight">Cal AI</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/30">
+<img class="w-full h-full object-cover" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYyzFhv45co8hM-0fYEMNYQwxyE2epPJ_KzEFWm71Kle0FdeOE7vK7vOumNXk2kB9eR3HJ8pfO5eecxYabusnRebXs-8HnRdicQcGTd875e72ccSmLW1XdKiy335z4z-s1GSYsReGnyrYdjEMobdQbh40-SsvApgoPhB1wDiTfdaeoIx4jJeRR9uOT2zyIkudPKtMV_NqWsoPhZuLSBr1bnTNzcSTUjRnFJk6O1vRG4mmRS0LtRMDgfHdy9RnKKD5G6FJSEiI4BWM"/>
+</div>
+</header>
+<!-- Main Content (Scrollable) -->
+<main class="flex-1 overflow-y-auto px-6 pt-4 pb-24 space-y-8 scrollbar-hide">
+<!-- AI Orb Section -->
+<div class="flex flex-col items-center justify-center py-6">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<!-- Animated Glow Layers -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary via-fuchsia-500 to-cyan-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+<div class="absolute inset-4 bg-gradient-to-bl from-pink-500 via-purple-600 to-blue-500 rounded-full blur-2xl opacity-50"></div>
+<!-- The Orb -->
+<div class="relative w-32 h-32 rounded-full bg-gradient-to-br from-white/20 to-transparent backdrop-blur-3xl border border-white/30 shadow-[0_0_40px_rgba(147,13,242,0.4)] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"></div>
+<span class="material-symbols-outlined text-white text-5xl opacity-80">auto_awesome</span>
+</div>
+</div>
+<div class="mt-8 text-center space-y-2">
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Mark, what did you eat today?</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">I'm ready to track your nutrition</p>
+</div>
+</div>
+<!-- Input Area -->
+<div class="space-y-4">
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/20 rounded-2xl blur-lg group-focus-within:bg-primary/40 transition-all duration-300"></div>
+<div class="relative flex items-center bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-xl">
+<span class="material-symbols-outlined text-primary mr-3">mic</span>
+<input class="bg-transparent border-none focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-500 w-full text-lg" placeholder="Describe your meal..." type="text"/>
+<button class="bg-primary hover:bg-primary/80 text-white p-2 rounded-xl transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<button class="flex items-center gap-2 px-4 py-2 bg-white/10 dark:bg-white/5 backdrop-blur-lg border border-white/10 rounded-full whitespace-nowrap text-sm font-medium hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-sm">photo_camera</span> Scan Photo
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white/10 dark:bg-white/5 backdrop-blur-lg border border-white/10 rounded-full whitespace-nowrap text-sm font-medium hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-sm">database</span> Search Database
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white/10 dark:bg-white/5 backdrop-blur-lg border border-white/10 rounded-full whitespace-nowrap text-sm font-medium hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-sm">add_circle</span> Quick Add
+                    </button>
+</div>
+</div>
+<!-- Suggestions Section -->
+<div class="space-y-4">
+<h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400 ml-1">Suggestions</h3>
+<div class="grid grid-cols-1 gap-3">
+<!-- Suggestion Card 1 -->
+<div class="flex items-center justify-between p-4 bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/20 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-500">coffee</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-slate-100">Coffee with oat milk</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">120 kcal • Common breakfast</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">add</span>
+</div>
+<!-- Suggestion Card 2 -->
+<div class="flex items-center justify-between p-4 bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/20 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-500">fitness_center</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-slate-100">Protein bar</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">210 kcal • Post-workout</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">add</span>
+</div>
+<!-- Suggestion Card 3 -->
+<div class="flex items-center justify-between p-4 bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/20 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-red-500">nutrition</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-slate-100">Apple</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">95 kcal • Healthy snack</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">add</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navbar -->
+<nav class="absolute bottom-0 left-0 right-0 p-4 pb-8 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-2xl border-t border-white/10">
+<div class="flex items-center justify-around max-w-sm mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-[10px] font-medium">Trends</span>
+</a>
+<!-- Central AI Button -->
+<div class="relative -mt-12">
+<div class="absolute inset-0 bg-primary blur-xl opacity-40 animate-pulse"></div>
+<button class="relative w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(147,13,242,0.6)] border-4 border-background-dark">
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="text-[10px] font-medium">Log</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Subtle Gradient Background Overlays -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-40 left-0 w-48 h-48 bg-fuchsia-500/10 blur-[80px] pointer-events-none"></div>
+</div>
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Photo Scanner - Cal AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#930df2",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#1b1022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(27, 16, 34, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(147, 13, 242, 0.2);
+        }
+        .scanner-frame {
+            border: 2px solid transparent;
+            background: linear-gradient(#1b1022, #1b1022) padding-box,
+                        linear-gradient(to right, #930df2, #2dd4bf) border-box;
+        }
+        .glow-pulse {
+            box-shadow: 0 0 20px rgba(147, 13, 242, 0.4);
+        }
+        .ios-bottom-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-slate-100 overflow-hidden">
+<!-- Main Viewport (Simulated Camera Feed) -->
+<div class="relative h-screen w-full bg-cover bg-center overflow-hidden" data-alt="A gourmet plate of grilled salmon with asparagus spears on a dark table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXd32WieqUm6KLmN6Le1eDNBkky92a0r1-cJuNTVXJznQhMw2xZmxQtyPnD62_BZNWRZTVFPYmf5JHIEe5USXPb4a9avo0koqDTNOjpQwuTJDxzdsN9CU5GCTZYloYpFmR0P5x8HI_C36CL75Osep7LkvhWAQpy2eDJqZWEQW0Ssn3CUzS3_qbY9sBqOYjv0EehmPqxAfxsAG2elJaYYRHpJszyqZfKqfw_1kLTAWCYxVbGfHoM4skQBXGSnKRbKG1IsbX27dX5cA');">
+<!-- Light Leak Overlay -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-teal-500/10 pointer-events-none"></div>
+<!-- Top Navigation Bar -->
+<div class="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-50">
+<button class="glass-panel size-12 flex items-center justify-center rounded-full text-slate-100 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<div class="flex items-center gap-4">
+<button class="glass-panel px-4 py-2 rounded-full text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span class="text-xs font-bold tracking-widest uppercase">AI active</span>
+</button>
+<button class="glass-panel size-12 flex items-center justify-center rounded-full text-slate-100">
+<span class="material-symbols-outlined">flash_on</span>
+</button>
+</div>
+</div>
+<!-- AI Scanning Frame Overlay -->
+<div class="absolute inset-0 flex items-center justify-center p-8">
+<div class="scanner-frame w-full max-w-sm aspect-square rounded-3xl relative flex items-center justify-center glow-pulse">
+<!-- Corner Accents -->
+<div class="absolute -top-1 -left-1 size-8 border-t-4 border-l-4 border-primary rounded-tl-3xl"></div>
+<div class="absolute -top-1 -right-1 size-8 border-t-4 border-r-4 border-teal-400 rounded-tr-3xl"></div>
+<div class="absolute -bottom-1 -left-1 size-8 border-b-4 border-l-4 border-teal-400 rounded-bl-3xl"></div>
+<div class="absolute -bottom-1 -right-1 size-8 border-b-4 border-r-4 border-primary rounded-br-3xl"></div>
+<!-- Floating AI Analysis Tags -->
+<div class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+<div class="glass-panel px-3 py-1.5 rounded-lg flex items-center gap-2 border-l-4 border-primary shadow-xl">
+<span class="material-symbols-outlined text-primary text-sm">flare</span>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-primary/80">Protein</span>
+<span class="text-xs font-semibold">Salmon (~250 cal)</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-1/3 right-1/4 transform translate-x-1/2 translate-y-1/2">
+<div class="glass-panel px-3 py-1.5 rounded-lg flex items-center gap-2 border-l-4 border-teal-400 shadow-xl">
+<span class="material-symbols-outlined text-teal-400 text-sm">eco</span>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-teal-400/80">Fiber</span>
+<span class="text-xs font-semibold">Asparagus (~30 cal)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Controls Interface -->
+<div class="absolute bottom-0 left-0 w-full glass-panel border-t border-primary/20 pt-8 pb-10 px-8 rounded-t-[3rem]">
+<div class="flex flex-col items-center gap-8">
+<p class="text-slate-100/90 text-sm font-medium tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined text-primary animate-pulse">center_focus_strong</span>
+                    Point camera at your meal
+                </p>
+<div class="flex items-center justify-between w-full max-w-xs">
+<!-- Gallery -->
+<button class="flex flex-col items-center gap-1 group">
+<div class="size-12 glass-panel rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-all">
+<span class="material-symbols-outlined text-slate-100">image</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-slate-400">Gallery</span>
+</button>
+<!-- Capture Button -->
+<div class="relative flex items-center justify-center">
+<div class="absolute size-24 border-2 border-primary/40 rounded-full animate-ping opacity-20"></div>
+<div class="absolute size-20 border-2 border-primary/60 rounded-full"></div>
+<button class="relative size-16 bg-gradient-to-tr from-primary to-teal-400 rounded-full flex items-center justify-center shadow-lg shadow-primary/40 active:scale-90 transition-transform">
+<div class="size-14 rounded-full border-2 border-white/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">photo_camera</span>
+</div>
+</button>
+</div>
+<!-- Manual Entry -->
+<button class="flex flex-col items-center gap-1 group">
+<div class="size-12 glass-panel rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-all">
+<span class="material-symbols-outlined text-slate-100">edit_note</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-slate-400">Manual</span>
+</button>
+</div>
+</div>
+<!-- iOS Home Indicator Space -->
+<div class="mt-8 flex justify-center w-full">
+<div class="w-32 h-1.5 bg-slate-100/20 rounded-full"></div>
+</div>
+</div>
+</div>
+</body></html>

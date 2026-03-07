@@ -1,0 +1,255 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#930df2",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#0a0a0c",
+                        "accent-teal": "#2dd4bf",
+                        "accent-orange": "#f97316",
+                        "accent-pink": "#ec4899",
+                        "glass": "rgba(255, 255, 255, 0.03)",
+                        "glass-border": "rgba(255, 255, 255, 0.08)"
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.25rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .chart-glow {
+            filter: drop-shadow(0 0 8px rgba(147, 13, 242, 0.5));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md px-6 pt-12 pb-4">
+<div class="flex items-center justify-between mb-6">
+<h1 class="text-2xl font-bold tracking-tight">Insights</h1>
+<div class="flex gap-4">
+<button class="flex items-center justify-center size-10 rounded-full glass-morphism">
+<span class="material-symbols-outlined text-xl">calendar_today</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full glass-morphism">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+</div>
+</div>
+<div class="flex p-1 rounded-xl glass-morphism">
+<button class="flex-1 py-2 text-sm font-medium rounded-lg bg-primary text-white shadow-lg shadow-primary/20">Week</button>
+<button class="flex-1 py-2 text-sm font-medium text-slate-400">Month</button>
+<button class="flex-1 py-2 text-sm font-medium text-slate-400">Year</button>
+</div>
+</header>
+<main class="flex-1 px-6 space-y-6 pb-32">
+<section class="glass-morphism rounded-2xl p-5 overflow-hidden relative">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Weight Progress</p>
+<h2 class="text-3xl font-bold">72.4 <span class="text-sm font-medium text-slate-400">kg</span></h2>
+</div>
+<span class="px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-bold">-1.2 kg</span>
+</div>
+<div class="h-40 w-full relative mt-4">
+<div class="absolute inset-0 flex items-end justify-between px-2">
+<div class="w-px h-full bg-slate-800/30"></div>
+<div class="w-px h-full bg-slate-800/30"></div>
+<div class="w-px h-full bg-slate-800/30"></div>
+<div class="w-px h-full bg-slate-800/30"></div>
+<div class="w-px h-full bg-slate-800/30"></div>
+</div>
+<svg class="absolute inset-0 w-full h-full overflow-visible" viewbox="0 0 400 100">
+<defs>
+<lineargradient id="lineGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#930df2" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#930df2" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path class="chart-glow" d="M0,80 Q50,75 100,60 T200,40 T300,55 T400,30" fill="none" stroke="#930df2" stroke-width="3"></path>
+<path d="M0,80 Q50,75 100,60 T200,40 T300,55 T400,30 L400,100 L0,100 Z" fill="url(#lineGradient)"></path>
+<circle class="chart-glow" cx="200" cy="40" fill="#930df2" r="4"></circle>
+<circle class="chart-glow" cx="400" cy="30" fill="#930df2" r="4"></circle>
+</svg>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold text-slate-600 uppercase">
+<span>Mon</span><span>Wed</span><span>Fri</span><span>Sun</span>
+</div>
+</section>
+<section class="grid grid-cols-2 gap-4">
+<div class="glass-morphism rounded-2xl p-4 flex flex-col justify-between aspect-square">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-lg bg-accent-orange/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-orange">local_fire_department</span>
+</div>
+<p class="text-xs font-semibold text-slate-400">Streak</p>
+</div>
+<div>
+<h3 class="text-3xl font-bold">12</h3>
+<p class="text-sm font-medium text-slate-400">Days Active</p>
+</div>
+</div>
+<div class="glass-morphism rounded-2xl p-4 flex flex-col justify-between aspect-square">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-lg bg-accent-teal/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-teal">bolt</span>
+</div>
+<p class="text-xs font-semibold text-slate-400">Efficiency</p>
+</div>
+<div>
+<h3 class="text-3xl font-bold text-accent-teal">94%</h3>
+<p class="text-sm font-medium text-slate-400">Target hit rate</p>
+</div>
+</div>
+</section>
+<section class="glass-morphism rounded-2xl p-5">
+<div class="flex justify-between items-center mb-6">
+<div>
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Calorie Trend</p>
+<p class="text-lg font-bold">Daily Avg: 2,140</p>
+</div>
+<div class="flex gap-2">
+<div class="flex items-center gap-1">
+<div class="size-2 rounded-full bg-accent-teal"></div>
+<span class="text-[10px] text-slate-400">On Target</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="size-2 rounded-full bg-accent-pink"></div>
+<span class="text-[10px] text-slate-400">Over</span>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between h-32 gap-2 px-1">
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-accent-teal/20 rounded-t-full relative" style="height: 70%;">
+<div class="absolute top-0 inset-x-0 h-1 bg-accent-teal shadow-[0_0_8px_#2dd4bf] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">M</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-accent-pink/20 rounded-t-full relative" style="height: 95%;">
+<div class="absolute top-0 inset-x-0 h-1 bg-accent-pink shadow-[0_0_8px_#ec4899] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">T</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-accent-teal/20 rounded-t-full relative" style="height: 60%;">
+<div class="absolute top-0 inset-x-0 h-1 bg-accent-teal shadow-[0_0_8px_#2dd4bf] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">W</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-accent-teal/20 rounded-t-full relative" style="height: 85%;">
+<div class="absolute top-0 inset-x-0 h-1 bg-accent-teal shadow-[0_0_8px_#2dd4bf] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">T</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-accent-teal/20 rounded-t-full relative" style="height: 75%;">
+<div class="absolute top-0 inset-x-0 h-1 bg-accent-teal shadow-[0_0_8px_#2dd4bf] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">F</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-accent-pink/20 rounded-t-full relative" style="height: 100%;">
+<div class="absolute top-0 inset-x-0 h-1 bg-accent-pink shadow-[0_0_8px_#ec4899] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">S</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-accent-teal/20 rounded-t-full relative" style="height: 40%;">
+<div class="absolute top-0 inset-x-0 h-1 bg-accent-teal shadow-[0_0_8px_#2dd4bf] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-600">S</span>
+</div>
+</div>
+</section>
+<section class="glass-morphism rounded-2xl p-5">
+<h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-6">Macro Distribution</h3>
+<div class="flex items-center gap-8">
+<div class="relative size-32 shrink-0">
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="16" stroke="rgba(255,255,255,0.05)" stroke-width="3.5"></circle>
+<circle cx="18" cy="18" fill="none" r="16" stroke="#2dd4bf" stroke-dasharray="40, 100" stroke-linecap="round" stroke-width="3.5"></circle>
+<circle cx="18" cy="18" fill="none" r="16" stroke="#f97316" stroke-dasharray="30, 100" stroke-dashoffset="-40" stroke-linecap="round" stroke-width="3.5"></circle>
+<circle cx="18" cy="18" fill="none" r="16" stroke="#ec4899" stroke-dasharray="30, 100" stroke-dashoffset="-70" stroke-linecap="round" stroke-width="3.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Avg</span>
+<span class="text-lg font-bold">Macros</span>
+</div>
+</div>
+<div class="space-y-4 flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-accent-teal"></div>
+<span class="text-sm font-medium text-slate-400">Protein</span>
+</div>
+<span class="text-sm font-bold">40%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-accent-orange"></div>
+<span class="text-sm font-medium text-slate-400">Carbs</span>
+</div>
+<span class="text-sm font-bold">30%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-accent-pink"></div>
+<span class="text-sm font-medium text-slate-400">Fat</span>
+</div>
+<span class="text-sm font-bold">30%</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 inset-x-0 px-6 pb-8 z-50">
+<div class="glass-morphism rounded-full px-6 py-3 flex items-center justify-between shadow-2xl">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">camera</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Scan</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Log</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">monitoring</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Trends</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">target</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Goals</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+
+```</body></html>
